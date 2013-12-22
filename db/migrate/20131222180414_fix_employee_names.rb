@@ -1,4 +1,4 @@
-class CorrectEmployees < ActiveRecord::Migration
+class FixEmployeeNames < ActiveRecord::Migration
   def change
     Employee.all.each do |employee|
       info = employee.first_name.split
@@ -7,4 +7,7 @@ class CorrectEmployees < ActiveRecord::Migration
       employee.email = info[2]
       employee.save!
     end
+  end
+
+end
 
